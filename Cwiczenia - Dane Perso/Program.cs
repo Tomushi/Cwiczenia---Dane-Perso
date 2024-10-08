@@ -1,6 +1,6 @@
-﻿using Cwiczenia___Dane_Perso;
+﻿using Cwiczenia_Dane_Perso;
 using System;
-    namespace Cwiczenia_Dane_Perso
+namespace Cwiczenia_Dane_Perso
 { 
     class Program
     { 
@@ -12,24 +12,32 @@ using System;
             Console.WriteLine("Witaj w bazie zarzadzania danymi");
         
             Console.WriteLine("Podaj swoje imie");
-            string imie = Console.ReadLine();
+            string imie = Console.ReadLine() ?? string.Empty;
 
             Console.WriteLine("Podaj swoje nazwisko");
-            string nazwisko = Console.ReadLine();
+            string nazwisko = Console.ReadLine() ?? string.Empty;
 
             Console.WriteLine("Podaj swoj pseudonim");
-            string pseudonim = Console.ReadLine();
+            string pseudonim = Console.ReadLine() ?? string.Empty;
 
-            Console.WriteLine("Jaki masz czas na 100-tke?");
-    
-            if (double.TryParse(Console.ReadLine(), out double czas))
+
+
+            double czas;
+
+            while (true)
 
             {
-                Console.WriteLine("Twoj czas na 100-tke to: " + czas);
-            }
-            else
-            {
-                Console.WriteLine("Podales zly czas");
+                Console.WriteLine("Jaki masz czas na 100-tke? Podaj liczbe z przecinkiem a nie z kropka.");
+
+                if (double.TryParse(Console.ReadLine(), out czas))
+                {
+                    Console.WriteLine("Twoj czas na 100-tke to: " + czas);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Podales zly czas. Sprobuj ponownie.");
+                }
             }
 
             Console.WriteLine("Ile wyciskasz na lawce?");
@@ -39,26 +47,27 @@ using System;
             double rozmiar = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Jakie sztuki walki potrafisz?");
-            string sztuki = Console.ReadLine();
+            string sztuki = Console.ReadLine() ?? string.Empty;
 
-            Console.WriteLine("Jakiego rodzaju broni uzywasz? Biala czy Prochowa");
+            Console.WriteLine("Jakiego rodzaju broni uzywasz? Wybierz \"B\" dla Biala lub \"P\" dla Prochowa");
             string bron = Console.ReadLine() ?? string.Empty;
                         
-            if (bron == "Biala")
+            if (bron == "B")
             {
-                Console.WriteLine("Jakiej broni bialej uzywasz?");
-                string bronBiala = Console.ReadLine() ?? string.Empty;
+                bialaBron.DisplayWeapons();
+            
             }
 
-            else if (bron == "Prochowa")
+            else if (bron == "P")
             {
-                Console.WriteLine("Jakiej broni prochowej uzywasz?");
-                string bronProchowa = Console.ReadLine() ?? string.Empty;
+                prochowaBron.DisplayWeapons();
             }
             else
             {
                 Console.WriteLine("Nie podales rodzaju broni");
             }
+
+            Console.WriteLine("Dziękujemy za dostarczanie informacji dla tajnej organizacji kontrolującej świat. ;)");
         }
     }
 }

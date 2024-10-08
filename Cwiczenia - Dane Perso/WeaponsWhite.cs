@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cwiczenia___Dane_Perso
+namespace Cwiczenia_Dane_Perso
 {
-    internal class WeaponsWhite
+    public class WeaponsWhite
     {
-        public void White()
+        public void DisplayWeapons()
         {
-            Console.WriteLine("Wybierz bron, podaj numer:");
+            Console.WriteLine("Wybierz bron");
             Console.WriteLine("1. Miecz");
             Console.WriteLine("2. Luk");
             Console.WriteLine("3. Topor");
@@ -19,11 +19,12 @@ namespace Cwiczenia___Dane_Perso
             Console.WriteLine("6. Maczuga");
             Console.WriteLine("7. Sztylet");
             Console.WriteLine("8. Katana");
-        
+
+            Console.WriteLine("Podaj jej numer:");
             string choice = Console.ReadLine();
             DisplayChoice(choice);
         }
-        private void DisplayChoice(string choice)
+        public void DisplayChoice(string choice)
         {
             switch (choice)
             {

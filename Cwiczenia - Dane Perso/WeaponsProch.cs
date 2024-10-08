@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cwiczenia___Dane_Perso
+namespace Cwiczenia_Dane_Perso
 {
-    internal class WeaponsProch
+    public class WeaponsProch
     {
-        public void Proch()
+        public void DisplayWeapons()
         {
-            Console.WriteLine("Wybierz bron, podaj numer:");
+            Console.WriteLine("Wybierz bron:");
             Console.WriteLine("1. Muszkiet");
             Console.WriteLine("2. Karabin");
             Console.WriteLine("3. Pistolet");
@@ -22,11 +22,12 @@ namespace Cwiczenia___Dane_Perso
             Console.WriteLine("8. Bazooka");
             Console.WriteLine("9. Karabin snajperski");
 
+            Console.WriteLine("Podaj jej numer:");
             string choice = Console.ReadLine();
             DisplayChoice(choice);
         }
 
-        private void DisplayChoice(string choice)
+        public void DisplayChoice(string choice)
         {
             switch (choice)
             {
